@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeHaven - Childproofing Experts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset and General Styles */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f8f9fa;
+            color: #495057;
+            overflow-x: hidden;
+            /* Ensures no horizontal scroll */
+        }
+
+        /* Header Styles */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 80px;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-radius: 0 0 10px 10px;
+            /* Rounded corners for the header */
+            background: linear-gradient(to right, #fff, #f8f9fa);
+            /* Subtle gradient */
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2E9CCA;
+            letter-spacing: 1px;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #495057;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #2E9CCA;
+            transform: scale(1.1);
+        }
+
+        /* Hero Section Styles */
+
+        .hero {
+            padding: 160px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(to right, #2E9CCA, #5dbdde);
+            /* Updated gradient colors */
+            animation: fadeIn 1.5s ease-in-out;
+            border-radius: 0 0 20px 20px;
+            /* Rounded corners for the hero */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 50px;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 19px;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #E07A5F;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 10px;
+            /* Rounded corners for the button */
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background: #F2BE22;
+            color: #2E9CCA;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero img {
+            width: 50%;
+            border-radius: 20px;
+            animation: float 3s infinite alternate ease-in-out;
+            object-fit: cover;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0px);
+            }
+
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Content Section Styles */
+
+        .content {
+            padding: 120px 80px;
+            background: #fff;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 40px;
+        }
+
+        .content h2 {
+            font-size: 36px;
+            color: #2E9CCA;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #495057;
+        }
+
+        .content ul {
+            list-style: disc;
+            margin: 20px auto;
+            max-width: 700px;
+            text-align: left;
+        }
+
+        .content ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Services Section Styles */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 50px 80px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .service-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-box i {
+            font-size: 45px;
+            color: #2E9CCA;
+            margin-bottom: 15px;
+        }
+
+        .service-box h3 {
+            color: #495057;
+            margin-bottom: 10px;
+        }
+
+        .service-box p {
+            color: #6c757d;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .service-box .learn-more-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #E07A5F;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            /* Rounded corners for the button */
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-box .learn-more-btn:hover {
+            background-color: #F2BE22;
+            color: #2E9CCA;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Testimonials Section Styles */
+
+        .testimonials {
+            padding: 80px;
+            background: #f8f9fa;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 40px;
+        }
+
+        .testimonials h2 {
+            font-size: 36px;
+            color: #2E9CCA;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            /* Rounded corners for the testimonial */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 500px;
+        }
+
+        .testimonial p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #495057;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #2E9CCA;
+        }
+
+        /* Contact Section Styles */
+
+        .contact {
+            padding: 80px;
+            background: #2E9CCA;
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            margin: 60px auto;
+            width: 70%;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(120deg, #2E9CCA, #5dbdde, #89d0e6);
+            /* Gradient background */
+        }
+
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 90%;
+            padding: 15px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            color: #495057;
+        }
+
+        .contact input::placeholder,
+        .contact textarea::placeholder {
+            color: #adb5bd;
+        }
+
+        .contact button {
+            background: white;
+            color: #2E9CCA;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact button:hover {
+            background: #F2BE22;
+            color: #2E9CCA;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Options Styles */
+
+        .contact-options {
+            margin-top: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-options h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .contact-options p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .contact-options a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-options a:hover {
+            text-decoration: underline;
+            color: #F2BE22;
+        }
+
+        /* Footer Styles */
+
+        .footer {
+            background: #343a40;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 16px;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to right, #343a40, #495057);
+            /* Subtle gradient */
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries for Responsiveness */
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 30px;
+            }
+
+            .logo {
+                font-size: 28px;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 16px;
+            }
+
+            .hero {
+                padding: 120px 30px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                max-width: 100%;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-text p {
+                font-size: 18px;
+            }
+
+            .hero img {
+                width: 80%;
+                margin-top: 30px;
+            }
+
+            .content {
+                padding: 80px 30px;
+            }
+
+            .services {
+                padding: 30px;
+            }
+
+            .contact {
+                padding: 60px 30px;
+                width: 90%;
+            }
+        }
+
+        /* Scroll-Triggered Animations (Example) */
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">SafeHaven</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in" id="home">
+        <div class="hero-text">
+            <h1>Give Your Child the Gift of a Safe Home</h1>
+            <p>Expert babyproofing solutions, tailored to your home and family. We create secure, stylish environments where your little one can explore and grow with
+                confidence.</p>
+            <a href="#contact" class="btn">Book a Free Safety Consultation</a>
+        </div>
+        <img src="C:\Users\anike\Downloads\baby-proofing-your-house.jpg" alt="Beautifully Babyproofed Room">
+    </section>
+
+    <!-- Content Section: About -->
+    <section class="content fade-in" id="about">
+        <h2>Hidden Hazards Lurk: Is Your Home a Safe Haven?</h2>
+        <p>Everyday items can pose risks to curious children. SafeHaven helps you identify and eliminate these dangers, creating a safe and nurturing environment.</p>
+        <ul>
+            <li>Unsecured furniture that can tip over</li>
+            <li>Sharp corners and edges at toddler height</li>
+            <li>Electrical outlets within reach</li>
+            <li>Accessible cleaning supplies and medications</li>
+            <li>Dangling blind cords</li>
+        </ul>
+        <p>Did you know that thousands of children are injured in home accidents each year? SafeHaven can help you prevent accidents before they happen.</p>
+    </section>
+
+    <!-- Content Section: Market Growth -->
+    <!-- Services Section -->
+    <section class="services fade-in" id="services">
+        <div class="service-box">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Full Home Safety Check</h3>
+            <p>Our comprehensive assessment identifies potential hazards in every room, considering your child's age, development stage, and unique behaviors. We provide a detailed
+                report with prioritized recommendations.</p>
+
+        </div>
+        <div class="service-box">
+            <i class="fas fa-cogs"></i>
+            <h3>Customized Safety Plan</h3>
+            <p>We design a personalized safety plan tailored to your home's layout, your family's lifestyle, and your specific concerns. We'll discuss product options and aesthetic
+                preferences.</p>
+
+        </div>
+        <div class="service-box">
+            <i class="fas fa-tools"></i>
+            <h3>Professional Installation</h3>
+            <p>Our experienced, certified installers use only the highest-quality, non-toxic materials. We ensure precise, secure installation, minimizing disruption to your home.</p>
+
+        </div>
+        <div class="service-box">
+            <i class="fas fa-baby"></i>
+            <h3>Ongoing Support & Education</h3>
+            <p>We provide follow-up support, answer your questions, and offer guidance as your child grows and their needs change. We're your partners in creating a safe environment.</p>
+
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials fade-in" id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>"SafeHaven gave us peace of mind knowing our home is safe for our little one. The team was professional, thorough, and offered solutions that fit our style."</p>
+                <p class="testimonial-author">- Sarah M.</p>
+            </div>
+            <div class="testimonial">
+                <p>"We were overwhelmed with babyproofing, but SafeHaven made it easy. Their customized plan addressed all our concerns, and the installation was quick and efficient."</p>
+                <p class="testimonial-author">- John & Emily K.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact fade-in" id="contact">
+        <h2>Protect Your Child Today: Schedule Your Free In-Home Safety Consultation</h2>
+        <p>Let us help you create a worry-free environment for your family. Fill out the form below, and we'll contact you to schedule a convenient consultation time.</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Contact Number" required>
+            <textarea placeholder="Your Message" rows="4"></textarea>
+            <button type="submit">Get a Free Consultation</button>
+        </form>
+
+        <!-- Contact Options Section -->
+        <div class="contact-options">
+            <h3>Or Reach Us Directly</h3>
+            <p>Email: <a href="mailto:info@safehaven.com">info@safehaven.com</a></p>
+            <p>Phone: <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2025 SafeHaven. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Stop observing once active
+                    }
+                });
+            });
+
+            fadeInElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+
+</html>
